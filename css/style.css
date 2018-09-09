@@ -692,6 +692,9 @@ textarea:focus {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+
 .popup_content,
 .popup_engineer_content,
 .popup_calc_end_content {
@@ -701,6 +704,7 @@ textarea:focus {
   transform: translateX(-50%);
   width: 40rem;
   background-color: #ffffff;
+  z-index: -100;
 }
 .popup_close,
 .popup_engineer_close,
