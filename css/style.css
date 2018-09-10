@@ -758,6 +758,9 @@ textarea:focus {
   margin-bottom: 3rem;
   width: 30rem;
 }
+.big_img {
+  width: 35%;
+}
 .popup_calc_content #type1 {
   display: inline-block;
 }
