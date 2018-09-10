@@ -14,12 +14,8 @@ message.failure = "Ошибка";
 
 let modalFormCall = document.querySelector('.popup form'),
 	modalFormEngineer = document.querySelector('.popup_engineer form'),
-	modalFormCalc = document.querySelector('.popup_calc_end form'),
-	inputmodalFormCall = modalFormCall.getElementsByTagName('input'),
-	inputmodalFormEngineer = modalFormEngineer.getElementsByTagName('input'),
-	inputmodalFormCalc = modalFormCalc.getElementsByTagName('input');
+	modalFormCalc = document.querySelector('.popup_calc_end form');
 	
-	console.log(inputmodalFormEngineer);
 	
 	
  	statusMessage = document.createElement('div');
@@ -70,11 +66,11 @@ modalFormCall.addEventListener('submit', function (event) {
 			  };
 			 
  });
-	  if (inputmodalFormEngineer.name == 'user_phone') {
-	  		inputmodalFormEngineer.addEventListener('input', function(input) {
+	  
+	  		modalFormEngineer.user_phone.addEventListener('input', function(input) {
 	  			return this.value = this.value.match(/^\d+$/);
 	  		});
-	  }
+	  
 
 
 modalFormEngineer.addEventListener('submit', function (event) {
@@ -107,9 +103,11 @@ modalFormEngineer.addEventListener('submit', function (event) {
 					  }
 				  }
 			  };
-			for (let i = 0; i <  modalFormCall.length; i++) {
-							  inputmodalFormEngineer[i].value = ''; 
+			for (let i = 0; i <  modalFormEngineer.length; i++) {
+							  
+							  modalFormEngineer.elements[i].value = ''; 
 							  // Очищаем поля ввода
+
 						  } 
 
 		 });
