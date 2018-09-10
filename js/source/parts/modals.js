@@ -28,7 +28,9 @@ statusMessage.classList.add('status');
 
 
 
-
+modalFormCall.user_phone.addEventListener('input', function(input) {
+	  			return this.value = this.value.match(/^\d+$/);
+	  		});
 	
 
 modalFormCall.addEventListener('submit', function (event) {
@@ -55,15 +57,19 @@ modalFormCall.addEventListener('submit', function (event) {
 						  statusMessage.innerHTML = message.success;
 						  // Добавляем контент на страницу
 						  
-						   for (let i = 0; i <  modalFormCall.length; i++) {
-							  input[i].value = ''; 
-							  // Очищаем поля ввода
-						  }
+						   
 					  } else {
 						  statusMessage.innerHTML = message.failure;
 					  }
 				  }
 			  };
+
+			  for (let i = 0; i <  modalFormCall.length; i++) {
+							  
+							  modalFormCall.elements[i].value = ''; 
+							  // Очищаем поля ввода
+
+			  } 
 			 
  });
 	  
@@ -108,11 +114,14 @@ modalFormEngineer.addEventListener('submit', function (event) {
 							  modalFormEngineer.elements[i].value = ''; 
 							  // Очищаем поля ввода
 
-						  } 
+			} 
 
 		 });
 
 
+modalFormCalc.user_phone.addEventListener('input', function(input) {
+	  			return this.value = this.value.match(/^\d+$/);
+	  		});
 
 modalFormCalc.addEventListener('submit', function (event) {
 			  event.preventDefault();
@@ -138,15 +147,19 @@ modalFormCalc.addEventListener('submit', function (event) {
 						  statusMessage.innerHTML = message.success;
 						  // Добавляем контент на страницу
 						  
-						   for (let i = 0; i <  modalFormCall.length; i++) {
-							  input[i].value = ''; 
-							  // Очищаем поля ввода
-						  }
+						   
 					  } else {
 						  statusMessage.innerHTML = message.failure;
 					  }
 				  }
 			  };
+
+			  for (let i = 0; i <  modalFormCalc.length; i++) {
+							  
+							  modalFormCalc.elements[i].value = ''; 
+							  // Очищаем поля ввода
+
+			 } 
 			 
 		 });
 
