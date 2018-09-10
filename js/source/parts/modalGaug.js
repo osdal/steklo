@@ -19,20 +19,13 @@ let popup_engineer_btn = document.querySelector('.popup_engineer_btn'),
 		
 	});
 
-	/*window.addEventListener('click', function(event) {
-		if (event.target != popup_form) {
+popup_engineer.addEventListener('click', function () {
+		if (event.target == popup_engineer) {
 			popup_engineer.style.display = 'none';
 		}
-	});
 
-	window.addEventListener('click', function(event){   
-		  if (!popup_form.contains(event.target)){
-		   	popup_engineer.style.display = 'block';
-		  } else {
-		  	popup_engineer.style.display = 'none';
-		  }
-	});
-*/
+})
+	
 	
 
 function modalGauger () {
