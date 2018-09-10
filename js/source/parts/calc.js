@@ -4,7 +4,7 @@
 	calcButtons = document.getElementsByClassName('glazing_price_btn'),
 	balcon_icons = document.querySelector('.balcon_icons'),
 	balcon_icons_img = document.querySelectorAll('.balcon_icons img');
-	// big_img = ;
+	
 
 
 sectionGlazzing.addEventListener('click', function (event) {
@@ -16,51 +16,51 @@ sectionGlazzing.addEventListener('click', function (event) {
 });
 
 
-function enlargeBalconImg (a) {
-		
-		for (let i = a; i < balcon_icons_img.length; i++) {
-			balcon_icons_img[i].classList.remove('show');
-			balcon_icons_img[i].classList.add('hide');
-		}
 
-	}
 
-	enlargeBalconImg(1);
+	function enlargeBalconImg (b) {
 
-	function reduceBalconImg (b) {
-
-		if (balcon_icons_img[b].classList.contains('hide')) {
-			hideBalconImg(0);
-			balcon_icons_img[b].classList.remove('hide');
-			balcon_icons_img[b].classList.add('show');
+		if (!balcon_icons_img[b].classList.contains('big_img')) {
+			balcon_icons_img[b].classList.add('big_img');
 		}
 		
 	}
 
-	balcon_icons_img.addEventListener('click', function (event) {
+	balcon_icons.addEventListener('click', function (event) {
 			let target = event.target;
-				if (target.className == 'info-header-tab') {
-					for (let i = 0; i < tab.length; i++) {
-						if (target == tab[i]) {
-							showTabContent(i);
-							break;
-						}
+				
+				for (var ii = 0; ii < balcon_icons_img.length; ii++) {
+					if (target == balcon_icons_img[ii]) {
+						enlargeBalconImg (ii);
+						break;
+						
 					}
 				}
-	});
-
-	info.addEventListener('click', function (event) {
-			let target = event.target;
-				if (target.className == 'info-header-tab') {
-					for (let i = 0; i < tab.length; i++) {
-						if (target == tab[i]) {
-							showTabContent(i);
-							break;
+				if (ii == 0) {
+					for (let i = 1; i = balcon_icons_img.length; i++) {
+						if (balcon_icons_img[i].classList.contains('big_img')) {
+							balcon_icons_img[i].classList.remove('big_img');
 						}
 					}
+				} else if (ii > 0 && ii < balcon_icons_img.length) {
+					for (let i = ii + 1; i = balcon_icons_img.length; i++) {
+					 	balcon_icons_img[i].classList.remove('big_img');
+					 } 
+					for (let i = 0; i < ii; i++) {
+					 	balcon_icons_img[i].classList.remove('big_img');
+					 }
+				} else if (ii == balcon_icons_img.length) {
+					for (let i = 0; i < balcon_icons_img.length - 1; i++) {
+					 	balcon_icons_img[i].classList.remove('big_img');
+					 }
 				}
+				
+				
+				
+				
 	});
 
+	
 
 /*balcon_icons.addEventListener('click', function (event) {
 	for (let i = 0; i < balcon_icons_img.length; i++) {
@@ -70,4 +70,3 @@ function enlargeBalconImg (a) {
 	}
 });*/
 
-console.log(balcon_icons);
