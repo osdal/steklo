@@ -1,8 +1,10 @@
 ﻿let dataForms = {
 				shape: null,
 				width_window: null,
-				height_window: null
-
+				height_window: null,
+				wether: null,
+				name: null,
+				phone: null
 				},
 	sectionGlazzing = document.getElementsByTagName('section')[0],
 	popup_calc = document.querySelector('.popup_calc'),
@@ -20,12 +22,18 @@
 	cold = document.getElementById('cold'),
 	warm = document.getElementById('warm'),
 	popup_calc_profile_button = document.getElementsByClassName('popup_calc_profile_button')[0],
-	popup_calc_end = document.getElementsByClassName('popup_calc_end')[0];
-	console.log(cold);
-	console.log(warm);
-	console.log(popup_calc_profile_button);
+	popup_calc_end = document.getElementsByClassName('popup_calc_end')[0],
+	endForm = document.querySelector('.popup_calc_end form'),
+	popup_calc_close = document.getElementsByClassName('popup_calc_close')[0],
+	popup_calc_end_close = document.getElementsByClassName('popup_calc_end_close')[0],
+	popup_calc_profile_close = document.getElementsByClassName('popup_calc_profile_close')[0];
 	
-
+	
+function clearingDataForms () {
+	for (var key in dataForms) {
+		delete dataForms[key];
+	}
+}
 
 sectionGlazzing.addEventListener('click', function (event) {
 	for (let i = 0; i < calcButtons.length; i++) {
@@ -65,6 +73,7 @@ sectionGlazzing.addEventListener('click', function (event) {
 				
 				for (var ii = 0; ii < balcon_icons_img.length; ii++) {
 					if (target == balcon_icons_img[ii]) {
+						
 						enlargeBalconImg (ii);
 						dataForms.shape = ii;
 						break;						
@@ -93,15 +102,20 @@ sectionGlazzing.addEventListener('click', function (event) {
 
 
 width.addEventListener('input', function(input) {
-	  			return this.value = this.value.match(/^\d+$/);
-	  				   this.value = dataForms.width;
-	  			
-	  		});
+        		dataForms.width_window = this.value;
+        		return this.value = this.value.match(/^\d+$/);
+});
 
 height.addEventListener('input', function(input) {
+				dataForms.height_window = this.value;
 	  			return this.value = this.value.match(/^\d+$/);
-	  		});
-console.log(dataForms.width);
+});
+
+popup_calc_close.addEventListener('click', function() {
+	popup_calc.style.display = 'none';
+	clearingDataForms ();
+});
+
 
 popup_calc_button.addEventListener('click', function () {
 	popup_calc.style.display = 'none';
@@ -109,15 +123,27 @@ popup_calc_button.addEventListener('click', function () {
 	popup_calc_profile.classList.add('popup_calc_profile_show');
 });
 
+popup_calc_profile_close.addEventListener('click', function() {
+	popup_calc.style.display = 'none';
+	popup_calc_profile.classList.add('popup_calc_profile');
+	popup_calc_profile.classList.remove('popup_calc_profile_show');
+	clearingDataForms ();
+});
+
 popup_calc_profile_content.addEventListener('click', function (event) {
 	if (event.target == cold) {
+		dataForms.wether = 'cold';
 		cold.classList.add('clicked_cold');
 		warm.classList.remove('clicked_warm');
 	} else if (event.target == warm) {
+		dataForms.wether = 'warm';
 		cold.classList.remove('clicked_cold');
 		warm.classList.add('clicked_warm');
 	}
+
 });
+
+
 
 popup_calc_profile_button.addEventListener('click', function () {
 	popup_calc_profile.classList.remove('popup_calc_profile_show');
@@ -125,7 +151,66 @@ popup_calc_profile_button.addEventListener('click', function () {
 	popup_calc_end.classList.remove('popup_calc_end');
 	popup_calc_end.classList.add('popup_calc_end_show');
 })
+
+
+endForm.user_name.addEventListener('input', function(input) {
+				dataForms.name = this.value;
+				console.log(dataForms);
+	  			});
 	
+endForm.user_phone.addEventListener('input', function(input) {
+				dataForms.name = this.value;
+				console.log(dataForms);
+	  			return this.value = this.value.match(/^\d+$/);
+	  		});
 
+let messageCalc = {};
+  
+messageCalc.loading = 'Идет отправка';
+messageCalc.success = "Отправлено";
+messageCalc.failure = "Ошибка";
 
+statusMessageCalc = document.createElement('div');
+statusMessageCalc.classList.add('status');
+
+endForm.addEventListener('submit', function(event) {
+	//Ajax
+			  let request = new XMLHttpRequest();
+			  request.open('POST', 'server.php', true);
+	  
+			  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  
+			  request.send(dataForms);
+
+			  request.onreadystatechange = function() {
+				  if (request.readyState < 4) {
+					  statusMessageCalc.innerHTML = messageCalc.loading;
+				  } else if (request.readyState == 4){
+					  if (request.status == 200 && request.status < 300) {
+						  	statusMessageCalc.innerHTML = '';
+						 	endForm.appendChild(statusMessageCalc);
+						  	statusMessageCalc.innerHTML = messageCalc.success;
+						  // Добавляем контент на страницу
+						  
+						   
+					  } else {
+						  statusMessageCalc.innerHTML = messageCalc.failure;
+					  }
+				  }
+			  };
+
+			});
+
+for (let i = 0; i <  endForm.length; i++) {
+							  
+				  endForm.elements[i].value = ''; 
+				  // Очищаем поля ввода
+
+			  } 
+
+popup_calc_end_close.addEventListener('click', function() {
+	popup_calc_end.classList.add('popup_calc_end');
+	popup_calc_end.classList.remove('popup_calc_end_show');
+	clearingDataForms();
+});	
 
