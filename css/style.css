@@ -693,6 +693,17 @@ textarea:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.popup_calc_end_show {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .popup_form {
   z-index: 20;
 }
@@ -734,7 +745,7 @@ textarea:focus {
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 40rem;
+  width: 50rem;
   padding: 1rem 0.5rem 4rem;
   background-color: #ffffff;
 }
@@ -759,7 +770,7 @@ textarea:focus {
   width: 30rem;
 }
 .big_img {
-  width: 35%;
+  width: 25%;
 }
 .popup_calc_content #type1 {
   display: inline-block;
@@ -801,6 +812,18 @@ textarea:focus {
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.popup_calc_profile_show {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .popup_calc_profile_content {
   position: fixed;
   top: 10%;
@@ -855,10 +878,19 @@ textarea:focus {
   bottom: 0;
   left: 0;
 }
-.popup_calc_profile_content .checkbox:checked + .checkbox-custom[id="cold"]::before {
+/* .popup_calc_profile_content .checkbox:checked + .checkbox-custom[id="cold"]::before {
+  background: url(../img/modal_calc/check.png) center center no-repeat;
+} */
+
+.clicked_cold {
   background: url(../img/modal_calc/check.png) center center no-repeat;
 }
-.popup_calc_profile_content .checkbox:checked + .checkbox-custom[id="warm"]::before {
+
+/* .popup_calc_profile_content .checkbox:checked + .checkbox-custom[id="warm"]::before {
+  background: url(../img/modal_calc/check_warm.png) center center no-repeat;
+} */
+
+.clicked_warm {
   background: url(../img/modal_calc/check_warm.png) center center no-repeat;
 }
 .popup_calc_profile_content .label {
@@ -1463,6 +1495,14 @@ textarea:focus {
   .popup_calc_profile_button {
     padding: 1rem 5rem;
   }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 /* small devices, tablets */
 @media only screen and (max-width: 768px) {
