@@ -421,6 +421,12 @@ textarea:focus {
   text-decoration: none;
   color: #454545;
 }
+
+.glazing a.pointed {
+  text-decoration: none;
+  color: #454545;
+}
+
 /*test*/
 /*.tabs li {
 	display: inline-block;

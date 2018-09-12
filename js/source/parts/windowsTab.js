@@ -5,12 +5,15 @@
 let windowTabsHeaderContainer = document.querySelector('.glazing_slider'),
 	windowTabsHeader = document.querySelectorAll('.glazing_slider a'),
 	windowTabsTree = document.querySelector('.row.tree'),
-	windowTabsAluminum = document.querySelector('.row.aluminum'),
-	windowTabsPlastic = document.querySelector('.row.plastic'),
-	windowTabsFrench = document.querySelector('.row.french'),
-	windowTabsRise = document.querySelector('.row.rise');
+	windowTabs = [
+			document.querySelector('.row.tree'),
+			document.querySelector('.row.aluminum'),
+			document.querySelector('.row.plastic'),
+			document.querySelector('.row.french'),
+			document.querySelector('.row.rise')
+		];
 
-console.log(windowTabsHeader);
+
 
 
 
@@ -18,9 +21,16 @@ windowTabsHeaderContainer.addEventListener('click', function (event) {
 	for (let i = 0; i < windowTabsHeader.length; i++) {
 		if (event.target == windowTabsHeader[i]) {
 			windowTabsHeader[i].classList.add('active');
-			for (let k = i; k < windowTabsHeader.length; k++) {
-				
+			windowTabs[i].classList.add('show');
+			for (let k = i + 1; k < windowTabsHeader.length; k++) {
 				windowTabsHeader[k].classList.remove('active');
+				windowTabs[k].classList.remove('show');
+				windowTabs[k].classList.add('hide');
+			}
+			for (let k = 0; k < i; k++) {
+				windowTabsHeader[k].classList.remove('active');
+				windowTabs[k].classList.remove('show');
+				windowTabs[k].classList.add('hide');
 			}
 			
 		}
