@@ -53,11 +53,11 @@ for (let i = 0; i < mainForms.length; i++) {
 					  }
 				  };
 
-				  for (let i = 0; i <  formDataMainForms.length; i++) {
-								  
-								  formDataMainForms.elements[i].value = ''; 
-								  // Очищаем поля ввода
-
+				  for (let i = 0; i <  mainForms.length; i++) {
+						for (let k = 0; k < 3; k++) {		  
+							  mainForms[i].elements[k].value = ''; 
+							  // Очищаем поля ввода
+						}
 				  } 
 				 
 	});
