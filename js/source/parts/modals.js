@@ -14,10 +14,7 @@
 
 		let modalFormCall = document.querySelector('.popup form'),
 			modalFormEngineer = document.querySelector('.popup_engineer form'),
-			modalFormCalc = document.querySelector('.popup_calc_end form');
-			
-			
-			
+			modalFormCalc = document.querySelector('.popup_calc_end form'),
 		 	statusMessage = document.createElement('div');
 
 		 	
