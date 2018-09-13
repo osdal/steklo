@@ -12,7 +12,7 @@ let decorationTabContainer = document.querySelector('.decoration_slider'),
 							document.querySelector('.roof')
 							];
 
-console.log(decorationTabContent);
+
 
 decorationTabContainer.addEventListener('click', function(event) {
 	for (let i = 0; i < decorationTab.length; i++) {
