@@ -28,7 +28,7 @@
 
 
 
-		modalFormCall.user_phone.addEventListener('input', function(input) {
+		modalFormCall.user_phone.addEventListener('input', function() {
 			  			return this.value = this.value.match(/^\d+$/);
 			  		});
 			
@@ -118,9 +118,13 @@
 
 				 });
 
+		function chekPhone () {
+			return this.value = this.value.match(/^\d+$/);	
+		}
+
 
 		modalFormCalc.user_phone.addEventListener('input', function(input) {
-			  			return this.value = this.value.match(/^\d+$/);
+			  			chekPhone(input);
 			  		});
 
 		modalFormCalc.addEventListener('submit', function (event) {
