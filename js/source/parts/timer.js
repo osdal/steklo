@@ -3,10 +3,10 @@
 }
 
 let deadline = '2019-07-04',
-		seconds = null,
-		minutes = null,
-		hours = null,
-		days = null;
+	seconds = null,
+	minutes = null,
+	hours = null,
+	days = null;
 
 
 	function getTimeRemaining(endtime) {
@@ -14,8 +14,8 @@ let deadline = '2019-07-04',
 		if (t > 0) {
 			seconds = Math.floor((t / 1000) % 60);
 			minutes = Math.floor((t / 1000 / 60) % 60);
-			hours = Math.floor((t / (1000 * 60 * 60)));
-			days = Math.floor(hours / 24);
+			hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+			days = Math.floor((t / (1000 * 60 * 60)) / 24);
 			console.log(days);
 		} else {
 			seconds = '0';

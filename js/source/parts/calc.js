@@ -1,6 +1,6 @@
 ﻿function calc() {
 	
-
+}
 
 let dataForms = {
 				shape: null,
@@ -192,8 +192,7 @@ endForm.addEventListener('submit', function(event) {
 				  } else if (request.readyState == 4){
 					  if (request.status == 200 && request.status < 300) {
 						  	statusMessageCalc.innerHTML = '';
-						 	endForm.appendChild(statusMessageCalc);
-						  	statusMessageCalc.innerHTML = messageCalc.success;
+						 	statusMessageCalc.innerHTML = messageCalc.success;
 						  // Добавляем контент на страницу
 						  
 						   
@@ -218,7 +217,7 @@ popup_calc_end_close.addEventListener('click', function() {
 	clearingDataForms();
 });	
 
-}
 
-module.exports = calc;
+
+// module.exports = calc;
 

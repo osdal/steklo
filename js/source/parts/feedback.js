@@ -1,6 +1,9 @@
-﻿function feedback () {
+﻿function feedbacks () {
 	
+
+
 }
+
 
 let questions = document.querySelector('.feedback_block h3'),
 	askSpecialist = document.querySelector('.feedback_block a'),
@@ -14,6 +17,4 @@ sectionFeedback.addEventListener('click', function(event) {
 });
 
 
-
-
-// module.exports = feedback;
+// module.exports = feedbacks;

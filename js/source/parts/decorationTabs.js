@@ -2,6 +2,7 @@
 	
 }
 
+
 let decorationTabContainer = document.querySelector('.decoration_slider'),
 	decorationTabLink = document.querySelectorAll('.decoration_tab a'),
 	decorationTab = document.querySelectorAll('.decoration_tab'),
@@ -32,6 +33,7 @@ decorationTabContainer.addEventListener('click', function(event) {
 		}
 	}
 });
+
 
 
 
