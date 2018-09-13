@@ -15,7 +15,8 @@ let deadline = '2019-07-04',
 			seconds = Math.floor((t / 1000) % 60);
 			minutes = Math.floor((t / 1000 / 60) % 60);
 			hours = Math.floor((t / (1000 * 60 * 60)));
-			days = Math.floor((t / (1000 * 60 * 60 * 24)));
+			days = Math.floor(hours / 24);
+			console.log(days);
 		} else {
 			seconds = '0';
 			minutes = '0';
@@ -40,13 +41,15 @@ let deadline = '2019-07-04',
 			minutes = timer.querySelector('.minutes'),
 			seconds = timer.querySelector('.seconds');
 
-
+console.log(days);
 
 		function updateClock() {
 			let t = getTimeRemaining(endtime);
 
 			if (t.days < 10) {
 				days.innerHTML = '0' + t.days;
+			} else {
+				days.innerHTML = t.days;
 			}
 			if (t.hours < 10) {
 				hours.innerHTML = '0' + t.hours;
