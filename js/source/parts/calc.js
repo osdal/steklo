@@ -1,4 +1,8 @@
-﻿let dataForms = {
+﻿function calc() {
+	
+
+
+let dataForms = {
 				shape: null,
 				width_window: null,
 				height_window: null,
@@ -150,7 +154,7 @@ popup_calc_profile_button.addEventListener('click', function () {
 	popup_calc_profile.classList.add('popup_calc_profile');
 	popup_calc_end.classList.remove('popup_calc_end');
 	popup_calc_end.classList.add('popup_calc_end_show');
-})
+});
 
 
 endForm.user_name.addEventListener('input', function(input) {
@@ -213,4 +217,8 @@ popup_calc_end_close.addEventListener('click', function() {
 	popup_calc_end.classList.remove('popup_calc_end_show');
 	clearingDataForms();
 });	
+
+}
+
+module.exports = calc;
 
