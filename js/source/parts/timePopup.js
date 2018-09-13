@@ -2,7 +2,7 @@
 	
 }
 
-let delay_popup = 3000,
+let delay_popup = 60000,
 	popup = document.getElementsByClassName('popup')[0],
 	popup_close_popup = document.querySelector('.popup .popup_close');
 
