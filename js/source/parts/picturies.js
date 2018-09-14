@@ -1,10 +1,14 @@
-﻿"use strict";
+﻿function popupImg() {
+  
+}
 
-function popupImg() {
-  var works = document.getElementsByClassName('works')[0],
-      imag = document.getElementsByClassName('imag');
+
+var works = document.getElementsByClassName('works')[0],
+      imag = document.querySelectorAll('img.imag');
+      
   works.addEventListener('click', function (event) {
     var target = event.target;
+    
 
     if (target.classList.contains('imag')) {
       for (var i = 0; i < imag.length; i++) {
@@ -34,6 +38,5 @@ function popupImg() {
       document.body.style.overflow = '';
     }
   });
-}
 
 // module.exports = popupImg;

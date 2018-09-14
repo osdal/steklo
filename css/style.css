@@ -1591,3 +1591,7 @@ textarea:focus {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
+.numbers-box {
+  margin: 10px;
+}
