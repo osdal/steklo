@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 function popupImg() {
   var works = document.getElementsByClassName('works')[0],
@@ -36,4 +36,25 @@ function popupImg() {
   });
 }
 
-// module.exports = popupImg;
+module.exports = popupImg;
+
+
+
+//Это в css должно быть, оно вроде есть, но поизи в поиске "popup_img" и "img_big", если нету то вставь это
+.popup_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.img_big {
+  height: 70%;
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
