@@ -1594,4 +1594,21 @@ textarea:focus {
 
 .numbers-box {
   margin: 10px;
+  color: #FFFFFF;
+  
+  border-radius: 50px;
+}
+
+.days, .hours, .minutes, .seconds {
+  font-size: 50px;
+  padding: 10px;
+  background: #393939;
+
+  border: 10px solid #393939;
+  border-radius: 20px;
+}
+
+.label-timer {
+  color: #393939;
+  font-weight: bold;
 }
